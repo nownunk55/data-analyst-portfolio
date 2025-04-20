@@ -24,11 +24,11 @@
           </svg>
         </button>
       </div>
-      <nav id="menu" class="hidden md:flex space-x-6 text-gray-300">
-        <a href="#about" class="hover:text-white">About</a>
-        <a href="#projects" class="hover:text-white">Projects</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-        <a href="#resume" class="hover:text-white">Resume</a>
+      <nav id="menu" class="hidden absolute top-full right-4 bg-gray-800 text-white rounded shadow-md p-4 space-y-2 md:relative md:flex md:space-x-6 md:space-y-0 md:bg-transparent md:p-0 md:text-gray-300">
+        <a href="#about" class="block md:inline hover:text-white">About</a>
+        <a href="#projects" class="block md:inline hover:text-white">Projects</a>
+        <a href="#contact" class="block md:inline hover:text-white">Contact</a>
+        <a href="#resume" class="block md:inline hover:text-white">Resume</a>
       </nav>
     </div>
   </header>
@@ -36,6 +36,7 @@
   <main class="pt-24">
     <!-- Hero Section -->
     <section class="text-center py-20 bg-gray-100">
+      <img src="your-photo.jpg" alt="Arfan Photo" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-300" />
       <h2 class="text-5xl font-extrabold mb-4 text-gray-900">Hi, I'm Arfan 👋</h2>
       <p class="text-lg max-w-xl mx-auto mb-6 text-gray-700">Fresh graduate with a passion for data analysis and visualization. I turn raw data into actionable insights.</p>
       <a href="#projects" class="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">View My Work</a>
@@ -78,15 +79,12 @@
       <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-bold mb-8 text-gray-900">Projects</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Project Card -->
           <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
             <h4 class="text-xl font-semibold mb-2 text-gray-800">HP Value Analysis</h4>
             <p class="text-gray-600 mb-2">Analyzed mobile phone sales data to identify brands offering the best specifications at the lowest prices.</p>
             <p class="text-sm text-gray-500 mb-4">Tools: Python, Pandas, Matplotlib</p>
             <a href="#" class="text-blue-600 hover:underline">🔗 View Project</a>
           </div>
-
-          <!-- Sample Project 2 -->
           <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
             <h4 class="text-xl font-semibold mb-2 text-gray-800">Movie Trends Analysis</h4>
             <p class="text-gray-600 mb-2">Explored The Movies Dataset to find patterns in ratings, revenue, and genre popularity.</p>
@@ -109,8 +107,8 @@
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-3xl font-bold mb-4 text-gray-900">Contact Me</h3>
         <p class="mb-6 text-gray-700">Interested in working together or just want to say hi? Reach out to me!</p>
-        <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
-        <p>LinkedIn: <a href="#" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a></p>
+        <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">arfanastadi46@gmail.com.com</a></p>
+        <p>LinkedIn: <a href="#" class="text-blue-600 hover:underline">linkedin.com</a></p>
       </div>
     </section>
   </main>
