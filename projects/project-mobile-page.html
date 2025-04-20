@@ -3,50 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HP Value Analysis - Project Overview</title>
+  <title>HP Value Analysis - Smartphone Market Insights</title>
+  <meta name="description" content="Data analysis project identifying smartphone brands offering best specifications at lowest prices">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      background: linear-gradient(to right, #f8fafc, #e0f2fe);
+    .gradient-bg {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    }
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .spec-highlight {
+      background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 40%;
+      background-position: 0 88%;
     }
   </style>
 </head>
-<body class="text-gray-800">
-  <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg py-4">
-    <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">HP Value Analysis</h1>
-      <nav class="space-x-4 text-sm">
-        <a href="https://nownunk55.github.io/portfolio/index.html" class="hover:text-yellow-400 transition">Home</a>
-        <a href="project-mobile-page.html" class="hover:text-yellow-400 transition">Technical Details</a>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <!-- Navigation -->
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+      <h1 class="text-2xl font-bold mb-4 sm:mb-0">HP Value Analysis</h1>
+      <nav class="flex space-x-1 sm:space-x-6">
+        <a href="https://nownunk55.github.io/portfolio/index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-yellow-400 transition">← Back to Portfolio</a>
+        <a href="project-mobile-page.html" class="px-3 py-2 rounded-md text-sm font-medium bg-yellow-500 text-gray-900 hover:bg-yellow-400 transition">Technical Details</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-16">
-    <div class="bg-white p-8 rounded-xl shadow-xl">
-      <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Project Description</h2>
-      <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-        In this project, I explored a dataset of mobile phone sales to answer the question:
-        <strong class="text-gray-900">"Which smartphone brand offers the best specifications for the lowest price?"</strong>
-      </p>
-      <p class="text-gray-700 mb-4 leading-relaxed">
-        By cleaning, analyzing, and visualizing the data using Python, I was able to uncover insights about value-for-money trends in the smartphone market.
-        The analysis included specifications such as RAM, storage, camera quality, battery life, and price comparisons across brands.
-      </p>
-      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
-         <h4 class="text-xl font-semibold mb-2 text-gray-800">The Problem solving of the Data</h4>
-          <p class="text-gray-600 mb-2">I analysted the data based on the problem my clients have</p>
-          <a href="value_of_money.html" class="text-blue-600 hover:underline">🔗 Which mobile brand offers the best specifications at the cheapest price?</a>
+  <!-- Main Content -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+      <!-- Project Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Smartphone Market Value Analysis</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Identifying which brands deliver the best specifications at the most competitive prices
+        </p>
       </div>
-      <p class="text-gray-700 leading-relaxed">
-        This page provides an overview of the project. For technical implementation and visualizations, please visit the
-        <a href="project-mobile-page.html" class="text-blue-600 font-semibold hover:underline">Technical Details</a> page.
-      </p>
+
+      <!-- Project Overview -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">Project Overview</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+              In this <span class="spec-highlight font-medium">data analysis project</span>, I explored a comprehensive dataset of mobile phone sales to answer a critical consumer question:
+            </p>
+            <blockquote class="bg-gray-50 border-l-4 border-yellow-500 italic p-4 mb-6">
+              <strong>"Which smartphone brand offers the best combination of specifications for the lowest price?"</strong>
+            </blockquote>
+            <p class="text-gray-700 leading-relaxed">
+              This analysis helps consumers make informed purchasing decisions and provides manufacturers with insights into market positioning.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h4 class="font-semibold text-lg mb-4">Key Specifications Analyzed</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span>RAM capacity and type</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span>Internal storage options</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span>Camera resolution and features</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span>Battery capacity and charging speed</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span>Processor performance benchmarks</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem Solving Section -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">Data-Driven Insights</h3>
+        
+        <div class="project-card bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-8">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/3 bg-gray-100 rounded-lg flex items-center justify-center min-h-48">
+              <div class="text-center p-4">
+                <span class="text-5xl">📊</span>
+                <p class="text-gray-500 mt-2">Data Visualization</p>
+              </div>
+            </div>
+            <div class="md:w-2/3">
+              <h4 class="text-xl font-semibold mb-3 text-gray-800">Value-for-Money Analysis</h4>
+              <p class="text-gray-600 mb-4">
+                I conducted comprehensive analysis to identify which mobile brands offer the best specifications at the most competitive price points, solving key questions for budget-conscious consumers.
+              </p>
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Price-Performance Ratio</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Brand Comparison</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Feature Prioritization</span>
+              </div>
+              <a href="value_of_money.html" class="inline-flex items-center text-blue-600 hover:underline font-medium">
+                Explore the findings →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Methodology Preview -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">Methodology Preview</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-yellow-500 text-2xl mb-3">1</div>
+            <h4 class="font-semibold mb-2">Data Collection</h4>
+            <p class="text-gray-600 text-sm">
+              Gathered comprehensive smartphone specifications and pricing data from multiple reliable sources.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-yellow-500 text-2xl mb-3">2</div>
+            <h4 class="font-semibold mb-2">Data Cleaning</h4>
+            <p class="text-gray-600 text-sm">
+              Standardized formats, handled missing values, and validated data consistency across all records.
+            </p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-yellow-500 text-2xl mb-3">3</div>
+            <h4 class="font-semibold mb-2">Analysis</h4>
+            <p class="text-gray-600 text-sm">
+              Calculated value scores based on specification-to-price ratios across different product categories.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Ready to dive into the technical details?</h3>
+        <a href="project-mobile-page.html" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition shadow-lg hover:shadow-xl font-medium">
+          View Full Technical Analysis
+        </a>
+      </section>
     </div>
   </main>
 
-  <footer class="bg-gray-900 text-white text-center py-6 text-sm">
-    &copy; 2025 Arfan. All rights reserved.
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; 2025 Arfan's Data Portfolio. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="https://nownunk55.github.io/portfolio/index.html" class="hover:text-yellow-400 transition">Portfolio Home</a>
+          <a href="#top" class="hover:text-yellow-400 transition">Back to Top</a>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
