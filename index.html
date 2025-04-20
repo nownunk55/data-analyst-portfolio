@@ -24,48 +24,48 @@
           </svg>
         </button>
       </div>
-      <nav id="menu" class="hidden absolute top-full right-4 bg-gray-800 text-white rounded shadow-md p-4 space-y-2 md:relative md:flex md:space-x-6 md:space-y-0 md:bg-transparent md:p-0 md:text-gray-300">
-        <a href="#about" class="block md:inline hover:text-white">About</a>
-        <a href="#projects" class="block md:inline hover:text-white">Projects</a>
-        <a href="#contact" class="block md:inline hover:text-white">Contact</a>
-        <a href="#resume" class="block md:inline hover:text-white">Resume</a>
+      <nav id="menu" class="hidden absolute top-16 right-4 bg-gray-800 rounded-md shadow-lg p-4 space-y-2 md:static md:flex md:space-y-0 md:space-x-6 md:bg-transparent md:p-0 md:shadow-none">
+        <a href="#about" class="block text-white hover:text-yellow-300">About</a>
+        <a href="#projects" class="block text-white hover:text-yellow-300">Projects</a>
+        <a href="#contact" class="block text-white hover:text-yellow-300">Contact</a>
+        <a href="#resume" class="block text-white hover:text-yellow-300">Resume</a>
       </nav>
     </div>
   </header>
 
   <main class="pt-24">
     <!-- Hero Section -->
-    <section class="text-center py-20 bg-gray-100">
-      <img src="your-photo.jpg" alt="Arfan Photo" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-300" />
+    <section class="text-center py-20 bg-gradient-to-br from-yellow-50 via-white to-blue-50">
+      <img src="your-photo.jpg" alt="Arfan Photo" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-300 shadow-md" />
       <h2 class="text-5xl font-extrabold mb-4 text-gray-900">Hi, I'm Arfan 👋</h2>
       <p class="text-lg max-w-xl mx-auto mb-6 text-gray-700">Fresh graduate with a passion for data analysis and visualization. I turn raw data into actionable insights.</p>
-      <a href="#projects" class="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">View My Work</a>
+      <a href="#projects" class="bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition shadow-lg">View My Work</a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-16 px-4 max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold mb-4 text-gray-900">About Me</h3>
-      <p class="text-gray-700 mb-2">I'm a data enthusiast who loves diving into datasets, finding patterns, and building visual stories. With strong skills in Python, SQL, and data visualization tools, I'm eager to contribute to impactful projects in the world of data.</p>
+      <h3 class="text-3xl font-bold mb-4 text-gray-900 border-b-2 border-yellow-400 inline-block">About Me</h3>
+      <p class="text-gray-700 mb-2 leading-relaxed">I'm a data enthusiast who loves diving into datasets, finding patterns, and building visual stories. With strong skills in Python, SQL, and data visualization tools, I'm eager to contribute to impactful projects in the world of data.</p>
       <p class="text-gray-700">Outside of data, I enjoy solving puzzles, creating visuals, and learning new tech tools.</p>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="py-16 px-4 max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold mb-4 text-gray-900">Skills</h3>
+      <h3 class="text-3xl font-bold mb-4 text-gray-900 border-b-2 border-yellow-400 inline-block">Skills</h3>
       <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
-        <li>Python</li>
-        <li>Pandas & NumPy</li>
-        <li>SQL</li>
-        <li>Data Visualization (Matplotlib, Seaborn)</li>
-        <li>Jupyter Notebook</li>
-        <li>Problem Solving</li>
+        <li class="bg-white p-3 rounded shadow text-center">Python</li>
+        <li class="bg-white p-3 rounded shadow text-center">Pandas & NumPy</li>
+        <li class="bg-white p-3 rounded shadow text-center">SQL</li>
+        <li class="bg-white p-3 rounded shadow text-center">Data Visualization (Matplotlib, Seaborn)</li>
+        <li class="bg-white p-3 rounded shadow text-center">Jupyter Notebook</li>
+        <li class="bg-white p-3 rounded shadow text-center">Problem Solving</li>
       </ul>
     </section>
 
     <!-- Certificates Section -->
     <section id="certificates" class="bg-gray-100 py-16 px-4">
       <div class="max-w-4xl mx-auto">
-        <h3 class="text-3xl font-bold mb-4 text-gray-900">Certificates</h3>
+        <h3 class="text-3xl font-bold mb-4 text-gray-900 border-b-2 border-yellow-400 inline-block">Certificates</h3>
         <ul class="space-y-4 text-gray-700 list-disc list-inside">
           <li><strong>Data Analysis with Python</strong> – Coursera (2024)</li>
           <li><strong>SQL for Data Science</strong> – Udemy (2024)</li>
@@ -75,17 +75,20 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-gray-100 py-16 px-4">
+    <section id="projects" class="bg-gradient-to-br from-blue-50 to-white py-16 px-4">
       <div class="max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-8 text-gray-900">Projects</h3>
+        <h3 class="text-3xl font-bold mb-8 text-gray-900 border-b-2 border-yellow-400 inline-block">Projects</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <!-- Project Card -->
+          <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
             <h4 class="text-xl font-semibold mb-2 text-gray-800">HP Value Analysis</h4>
             <p class="text-gray-600 mb-2">Analyzed mobile phone sales data to identify brands offering the best specifications at the lowest prices.</p>
             <p class="text-sm text-gray-500 mb-4">Tools: Python, Pandas, Matplotlib</p>
             <a href="#" class="text-blue-600 hover:underline">🔗 View Project</a>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+
+          <!-- Sample Project 2 -->
+          <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
             <h4 class="text-xl font-semibold mb-2 text-gray-800">Movie Trends Analysis</h4>
             <p class="text-gray-600 mb-2">Explored The Movies Dataset to find patterns in ratings, revenue, and genre popularity.</p>
             <p class="text-sm text-gray-500 mb-4">Tools: Python, Seaborn, Jupyter</p>
@@ -97,7 +100,7 @@
 
     <!-- Resume Section -->
     <section id="resume" class="py-16 px-4 max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold mb-4 text-gray-900">Resume</h3>
+      <h3 class="text-3xl font-bold mb-4 text-gray-900 border-b-2 border-yellow-400 inline-block">Resume</h3>
       <p class="text-gray-600 mb-4">You can download my latest resume below:</p>
       <a href="#" class="inline-block bg-gray-900 text-white px-5 py-2 rounded hover:bg-gray-800 transition">Download Resume</a>
     </section>
@@ -105,10 +108,10 @@
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-100 py-16 px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h3 class="text-3xl font-bold mb-4 text-gray-900">Contact Me</h3>
+        <h3 class="text-3xl font-bold mb-4 text-gray-900 border-b-2 border-yellow-400 inline-block">Contact Me</h3>
         <p class="mb-6 text-gray-700">Interested in working together or just want to say hi? Reach out to me!</p>
-        <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">arfanastadi46@gmail.com.com</a></p>
-        <p>LinkedIn: <a href="#" class="text-blue-600 hover:underline">linkedin.com</a></p>
+        <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
+        <p>LinkedIn: <a href="#" class="text-blue-600 hover:underline">linkedin.com/in/yourprofile</a></p>
       </div>
     </section>
   </main>
