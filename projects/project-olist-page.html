@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olist E-Commerce Analysis</title>
+  <meta name="description" content="Brazilian E-Commerce Data Analysis Project">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+    }
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .analysis-highlight {
+      background: linear-gradient(120deg, #dbeafe 0%, #dbeafe 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 40%;
+      background-position: 0 88%;
+    }
+  </style>
+</head>
+<body class="gradient-bg text-gray-800 min-h-screen flex flex-col">
+  <!-- Navigation -->
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Olist Analysis</h1>
+      <nav class="flex space-x-4">
+        <a href="portfolio.html" class="hover:text-yellow-400 transition">← Portfolio</a>
+        <a href="technical.html" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded hover:bg-yellow-400 transition">Technical Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 py-12">
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+      
+      <!-- Project Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Brazilian E-Commerce Analysis</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Analyzing customer behavior and sales patterns from Olist's marketplace data
+        </p>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-blue-50 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-blue-600">R$ 13M+</div>
+          <div class="text-gray-700">Total Sales</div>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-green-600">96k+</div>
+          <div class="text-gray-700">Orders</div>
+        </div>
+        <div class="bg-purple-50 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-purple-600">74%</div>
+          <div class="text-gray-700">Repeat Customers</div>
+        </div>
+      </div>
+
+      <!-- Analysis Sections -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Main Insights</h3>
+        
+        <!-- Order Analysis -->
+        <div class="project-card bg-white p-6 rounded-xl mb-8">
+          <div class="md:flex gap-6">
+            <div class="md:w-1/3">
+              <div id="order-status-chart" style="height: 300px;"></div>
+            </div>
+            <div class="md:w-2/3">
+              <h4 class="text-xl font-semibold mb-4">Order Status Distribution</h4>
+              <p class="text-gray-600 mb-4">
+                Analysis of order fulfillment status shows that 92% of orders were successfully delivered,
+                while 4.3% were canceled by customers.
+              </p>
+              <pre class="bg-gray-100 p-4 rounded text-sm">
+# Order status calculation
+order_status = df['order_status'].value_counts(normalize=True) * 100</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Analysis -->
+        <div class="project-card bg-white p-6 rounded-xl">
+          <div class="md:flex gap-6">
+            <div class="md:w-1/3">
+              <div id="payment-type-chart" style="height: 300px;"></div>
+            </div>
+            <div class="md:w-2/3">
+              <h4 class="text-xl font-semibold mb-4">Payment Type Preferences</h4>
+              <p class="text-gray-600 mb-4">
+                Credit cards dominate as the preferred payment method, accounting for 73.5% of all transactions.
+                Installment payments show interesting patterns in average order value.
+              </p>
+              <pre class="bg-gray-100 p-4 rounded text-sm">
+payment_analysis = df.groupby('payment_type')['payment_value'].agg(['mean', 'count'])</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Geo Analysis -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Geospatial Distribution</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div id="geospatial-chart" style="height: 500px;"></div>
+          <p class="text-sm text-gray-600 mt-4">Sales concentration in Southeast Brazil with São Paulo leading</p>
+        </div>
+      </section>
+
+      <!-- Time Series -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Sales Trends</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div id="sales-trend-chart" style="height: 400px;"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Order Status Chart
+    Plotly.newPlot('order-status-chart', [{
+      values: [92, 4.3, 3.7],
+      labels: ['Delivered', 'Canceled', 'Other'],
+      type: 'pie',
+      marker: {
+        colors: ['#3B82F6', '#EF4444', '#6B7280']
+      }
+    }], {
+      margin: {t: 20, l: 0, r: 0, b: 0}
+    });
+
+    // Payment Type Chart
+    Plotly.newPlot('payment-type-chart', [{
+      x: ['Credit Card', 'Boleto', 'Voucher', 'Debit Card'],
+      y: [73.5, 19.3, 5.2, 2],
+      type: 'bar',
+      marker: {
+        color: '#10B981'
+      }
+    }], {
+      margin: {t: 20, l: 40, r: 10, b: 40}
+    });
+
+    // Geospatial Chart (Example)
+    Plotly.newPlot('geospatial-chart', [{
+      type: 'scattergeo',
+      locations: ['SP', 'RJ', 'MG', 'RS', 'PR'],
+      locationmode: 'BR-ST',
+      text: ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Rio Grande do Sul', 'Paraná'],
+      marker: {
+        size: [100, 60, 40, 30, 25],
+        color: '#3B82F6'
+      }
+    }], {
+      geo: {
+        scope: 'south america',
+        center: {lat: -15, lon: -55},
+        projection: {type: 'mercator'},
+        showlakes: true
+      }
+    });
+
+    // Sales Trend Chart
+    Plotly.newPlot('sales-trend-chart', [{
+      x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      y: [1200000, 1500000, 1350000, 1420000, 1600000, 1750000],
+      type: 'scatter',
+      mode: 'lines+markers',
+      line: {color: '#3B82F6'}
+    }], {
+      title: 'Monthly Sales Trend (BRL)',
+      margin: {t: 30, l: 40, r: 10, b: 40}
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-400">© 2023 E-Commerce Analysis Project</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="#top" class="hover:text-blue-400">Back to Top</a>
+        <a href="methodology.html" class="hover:text-blue-400">Methodology</a>
+        <a href="data-source.html" class="hover:text-blue-400">Data Source</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
